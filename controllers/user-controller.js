@@ -25,7 +25,7 @@ const userControl = {
         .then(dbUser => {
             if(!dbUser) {
                 res.status(404).json({ message: 'No User found.' });
-          return;
+                return;
             }
             res.json(dbUser);
         })
@@ -42,7 +42,7 @@ const userControl = {
             .then(dbUser => {
                 if(!dbUser){
                     res.status(404).json({ message: 'No User found. ' });
-          return;
+                    return;
                 }
             })
         })
@@ -53,7 +53,7 @@ const userControl = {
         .the(dbUser => {
             if(!dbUser){
                 res.status(404).json({ message: 'No User found.' });
-          return;
+                return;
             }
             res.json(dbUser);
         })
@@ -75,7 +75,7 @@ const userControl = {
         .then((dbUser) => {
             if(!dbUser){
                 res.status(404).json({ message: 'No User found ' });
-          return;
+                return;
             }
             res.json(dbUser);
         })
@@ -91,7 +91,7 @@ const userControl = {
         .then((dbUser) => {
             if(!dbUser){
                 res.status(404).json({ message: 'No User found ' });
-          return;
+                return;
             }
             res.json(dbUser);
         })
