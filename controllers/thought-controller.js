@@ -48,7 +48,7 @@ const thoughtControl = {
         .then(dbData => {
             if (!dbData) {
                 res.status(404).json({message: 'No thoughts.'});
-            return;
+                return;
             }
             res.json(dbData);
         })
@@ -64,7 +64,7 @@ const thoughtControl = {
         .then(dbData => {
             if (!dbData) {
                 res.status(404).json({message: 'None.'});
-            return;
+                return;
             }
             res.json(dbData);
         })
@@ -86,6 +86,18 @@ const thoughtControl = {
         .then(dbData => {
             if (!dbData) {
                 res.status(404).json({message: "No user found."});
+                return;
+            }
+            res.json(dbData);
+        })
+        .catch(err => res.json(err));
+    },
+
+    updateThought({parmas, body }, res){
+        thought.findOneAndUpdate({ _id: params.id }, body, { new: true, runValidators: true })
+        .the(dbData => {
+            if(!dbData) {
+                res.status(404).json({ message: 'No thoughts found with that id!' });
                 return;
             }
             res.json(dbData);
